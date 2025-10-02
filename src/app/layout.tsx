@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import Analytics from "@/components/Analytics";
+import StructuredData from "@/components/StructuredData";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -15,9 +16,9 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://kptechnologysolutions.com'),
-  title: "Web Development Company Cleveland | Custom Websites & Mobile Apps | KP Technology Solutions",
-  description: "Professional web development services in Cleveland, Ohio. Custom websites, mobile apps, Angular & Next.js development. 15+ years experience. Free consultation available.",
-  keywords: "web development Cleveland, custom website development, mobile app development, Angular developers, Next.js development, Cleveland web design, Ohio web developers",
+  title: "Web Development Company Cleveland & Charleston | Custom Websites & Mobile Apps | KP Technology Solutions",
+  description: "Professional web development services in Cleveland, Ohio and Charleston, South Carolina. Custom websites, mobile apps, Angular & Next.js development. 15+ years experience serving clients nationwide.",
+  keywords: "web development Cleveland, web development Charleston, custom website development, mobile app development, Angular developers, Next.js development, Cleveland web design, Charleston web design, Ohio web developers, South Carolina web developers",
   authors: [{ name: "KP Technology Solutions" }],
   creator: "KP Technology Solutions",
   publisher: "KP Technology Solutions",
@@ -27,8 +28,8 @@ export const metadata: Metadata = {
     telephone: false,
   },
   openGraph: {
-    title: "Web Development Company Cleveland | KP Technology Solutions",
-    description: "Professional web development services in Cleveland, Ohio. Custom websites and mobile apps that help your business grow.",
+    title: "Web Development Company Cleveland & Charleston | KP Technology Solutions",
+    description: "Professional web development services in Cleveland, Ohio and Charleston, South Carolina. Custom websites and mobile apps that help your business grow nationwide.",
     url: "https://kptechnologysolutions.com",
     siteName: "KP Technology Solutions",
     locale: "en_US",
@@ -44,8 +45,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Web Development Company Cleveland | KP Technology Solutions",
-    description: "Professional web development services in Cleveland, Ohio. Custom websites and mobile apps that help your business grow.",
+    title: "Web Development Company Cleveland & Charleston | KP Technology Solutions",
+    description: "Professional web development services in Cleveland, Ohio and Charleston, South Carolina. Custom websites and mobile apps that help your business grow nationwide.",
     images: ["/images/social/og-image-main.png"],
     creator: "@kptechnology",
     site: "@kptechnology",
@@ -82,6 +83,7 @@ export default function RootLayout({
         suppressHydrationWarning={true}
       >
         <Analytics gaId={process.env.NEXT_PUBLIC_GA_ID} />
+        <StructuredData />
         {children}
       </body>
     </html>

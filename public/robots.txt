@@ -1,0 +1,20 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://kptechnologysolutions.com/sitemap.xml
+
+# Disallow non-public files
+Disallow: /scripts/
+Disallow: /_next/
+Disallow: /api/
+
+# Allow Google to crawl and index our site
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+# Allow Bing to crawl and index our site  
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1

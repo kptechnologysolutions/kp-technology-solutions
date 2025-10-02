@@ -172,14 +172,25 @@ export default function KPHero() {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <Link
-                  href="mailto:kptechnologysolutions@gmail.com"
+                <a
+                  href="#contact"
                   className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-purple-600 to-blue-600 text-white font-bold text-lg rounded-lg shadow-2xl hover:from-purple-700 hover:to-blue-700 transition-all group"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+                    // Track CTA click
+                    if (typeof window !== 'undefined' && (window as any).gtag) {
+                      (window as any).gtag('event', 'cta_click', {
+                        event_category: 'Engagement',
+                        event_label: 'Hero CTA - Start Project'
+                      });
+                    }
+                  }}
                 >
                   <Rocket className="mr-2 w-6 h-6" />
                   Start Your Project
                   <ArrowRight className="ml-2 w-6 h-6 group-hover:translate-x-1 transition-transform" />
-                </Link>
+                </a>
               </motion.div>
               <motion.div
                 whileHover={{ scale: 1.05 }}

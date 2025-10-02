@@ -470,19 +470,23 @@ export default function Portfolio() {
               Our senior developers are ready to transform your business with AI-powered solutions.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link
-                href="mailto:kptechnologysolutions@gmail.com"
+              <a
+                href="#contact"
+                onClick={(e) => {
+                  e.preventDefault();
+                  document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+                }}
                 className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-purple-600 to-blue-600 text-white font-bold rounded-lg hover:from-purple-700 hover:to-blue-700 transition-all group"
               >
                 Get Started Today
                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </Link>
-              <Link
+              </a>
+              <a
                 href="mailto:kptechnologysolutions@gmail.com?subject=Request Full Portfolio"
                 className="inline-flex items-center px-8 py-4 bg-white/10 backdrop-blur text-white font-bold rounded-lg border border-white/20 hover:bg-white/20 transition-all"
               >
                 View Full Portfolio
-              </Link>
+              </a>
             </div>
           </div>
         </motion.div>

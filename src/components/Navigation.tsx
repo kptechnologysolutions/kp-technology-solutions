@@ -22,7 +22,7 @@ export default function Navigation() {
     { href: '#services', label: 'Services', icon: Code },
     { href: '#portfolio', label: 'Portfolio', icon: Zap },
     { href: '#about', label: 'About', icon: Brain },
-    { href: 'mailto:kptechnologysolutions@gmail.com', label: 'Contact', icon: Mail },
+    { href: '#contact', label: 'Contact', icon: Mail },
   ];
 
   return (
@@ -78,13 +78,19 @@ export default function Navigation() {
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   whileHover={{ scale: 1.05 }}
                 >
-                  <Link
+                  <a
                     href={item.href}
+                    onClick={(e) => {
+                      if (item.href.startsWith('#')) {
+                        e.preventDefault();
+                        document.getElementById(item.href.slice(1))?.scrollIntoView({ behavior: 'smooth' });
+                      }
+                    }}
                     className="flex items-center space-x-2 text-gray-300 hover:text-white transition-colors duration-200 group"
                   >
                     <IconComponent className="w-4 h-4 group-hover:text-purple-400 transition-colors" />
                     <span className="font-medium">{item.label}</span>
-                  </Link>
+                  </a>
                 </motion.div>
               );
             })}
@@ -101,12 +107,16 @@ export default function Navigation() {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <Link
-                href="mailto:kptechnologysolutions@gmail.com"
+              <a
+                href="#contact"
+                onClick={(e) => {
+                  e.preventDefault();
+                  document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+                }}
                 className="bg-gradient-to-r from-purple-600 to-blue-600 text-white px-6 py-2 rounded-lg font-bold hover:from-purple-700 hover:to-blue-700 transition-all shadow-lg"
               >
                 Start Project
-              </Link>
+              </a>
             </motion.div>
           </motion.div>
 
@@ -141,14 +151,20 @@ export default function Navigation() {
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.3, delay: index * 0.1 }}
                   >
-                    <Link
+                    <a
                       href={item.href}
-                      onClick={() => setIsMobileMenuOpen(false)}
+                      onClick={(e) => {
+                        if (item.href.startsWith('#')) {
+                          e.preventDefault();
+                          document.getElementById(item.href.slice(1))?.scrollIntoView({ behavior: 'smooth' });
+                        }
+                        setIsMobileMenuOpen(false);
+                      }}
                       className="flex items-center space-x-3 text-gray-300 hover:text-white transition-colors duration-200 py-2"
                     >
                       <IconComponent className="w-5 h-5" />
                       <span className="font-medium">{item.label}</span>
-                    </Link>
+                    </a>
                   </motion.div>
                 );
               })}
@@ -160,13 +176,17 @@ export default function Navigation() {
                 transition={{ duration: 0.3, delay: navItems.length * 0.1 }}
                 className="pt-4"
               >
-                <Link
-                  href="mailto:kptechnologysolutions@gmail.com"
-                  onClick={() => setIsMobileMenuOpen(false)}
+                <a
+                  href="#contact"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+                    setIsMobileMenuOpen(false);
+                  }}
                   className="block text-center bg-gradient-to-r from-purple-600 to-blue-600 text-white px-6 py-3 rounded-lg font-bold"
                 >
                   Start Your Project
-                </Link>
+                </a>
               </motion.div>
             </div>
           </motion.div>

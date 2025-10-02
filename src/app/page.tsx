@@ -1,7 +1,12 @@
+'use client';
+
 import Navigation from '@/components/Navigation';
 import KPHero from '@/components/hero/KPHero';
 import DevTerminal from '@/components/features/DevTerminal';
+import About from '@/components/sections/About';
 import Portfolio from '@/components/sections/Portfolio';
+import Testimonials from '@/components/sections/Testimonials';
+import Contact from '@/components/sections/Contact';
 
 export default function Home() {
   return (
@@ -110,8 +115,17 @@ export default function Home() {
         </div>
       </section>
 
+      {/* About Section */}
+      <About />
+
       {/* Portfolio Section */}
       <Portfolio />
+
+      {/* Testimonials Section */}
+      <Testimonials />
+
+      {/* Contact Section */}
+      <Contact />
 
       {/* Footer */}
       <footer className="bg-black border-t border-gray-800 py-12">
@@ -136,8 +150,12 @@ export default function Home() {
             
             <div className="flex justify-center">
               <a
-                href="mailto:kptechnologysolutions@gmail.com"
+                href="#contact"
                 className="inline-flex items-center px-8 py-3 bg-gradient-to-r from-purple-600 to-blue-600 text-white font-bold rounded-lg hover:from-purple-700 hover:to-blue-700 transition-all"
+                onClick={(e) => {
+                  e.preventDefault();
+                  document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+                }}
               >
                 Start Your Project Today
               </a>
