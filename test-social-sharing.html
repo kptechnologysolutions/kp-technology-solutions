@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Sharing Test - KP Technology Solutions</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        .test-section {
+            background: #f5f5f5;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+        .preview-image {
+            max-width: 100%;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            margin: 10px 0;
+        }
+        .test-url {
+            background: #e8f4fd;
+            padding: 10px;
+            border-radius: 4px;
+            font-family: monospace;
+            word-break: break-all;
+        }
+        .status {
+            padding: 8px 16px;
+            border-radius: 4px;
+            margin: 10px 0;
+            font-weight: bold;
+        }
+        .status.success { background: #d4edda; color: #155724; }
+        .status.warning { background: #fff3cd; color: #856404; }
+        .checklist {
+            background: white;
+            padding: 15px;
+            border-left: 4px solid #007cba;
+        }
+        .checklist ul {
+            margin: 0;
+            padding-left: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>🔗 Social Media Sharing Test</h1>
+    <p>Testing social media preview functionality for KP Technology Solutions website.</p>
+
+    <div class="test-section">
+        <h2>📊 Meta Tags Status</h2>
+        <div class="status success">✅ Open Graph meta tags configured</div>
+        <div class="status success">✅ Twitter Card meta tags configured</div>
+        <div class="status success">✅ MetadataBase URL set to prevent warnings</div>
+        <div class="status success">✅ Social preview images generated</div>
+    </div>
+
+    <div class="test-section">
+        <h2>🖼️ Generated Social Preview Images</h2>
+        
+        <h3>Main Homepage Preview</h3>
+        <img src="public/images/social/og-image-main.png" alt="Main social preview" class="preview-image">
+        <p><strong>Title:</strong> "Custom Websites That Actually Work"</p>
+        <p><strong>Description:</strong> Professional web development services in Cleveland, Ohio. We build fast, mobile-friendly websites and apps that help your business grow.</p>
+        
+        <h3>Services Preview</h3>
+        <img src="public/images/social/og-image-services.png" alt="Services social preview" class="preview-image">
+        <p><strong>Title:</strong> "Cleveland Web Development Experts"</p>
+        <p><strong>Description:</strong> 15+ years building custom websites, mobile apps, and online stores. Angular & Next.js specialists who speak your language.</p>
+        
+        <h3>Portfolio Preview</h3>
+        <img src="public/images/social/og-image-portfolio.png" alt="Portfolio social preview" class="preview-image">
+        <p><strong>Title:</strong> "Portfolio of Successful Projects"</p>
+        <p><strong>Description:</strong> From bowling centers to restaurants, we've built websites that drive real business results. See our work in action.</p>
+    </div>
+
+    <div class="test-section">
+        <h2>🌐 Testing URLs</h2>
+        <p>Test these URLs with social media preview tools:</p>
+        
+        <h3>Facebook Sharing Debugger</h3>
+        <div class="test-url">https://developers.facebook.com/tools/debug/</div>
+        
+        <h3>Twitter Card Validator</h3>
+        <div class="test-url">https://cards-dev.twitter.com/validator</div>
+        
+        <h3>LinkedIn Post Inspector</h3>
+        <div class="test-url">https://www.linkedin.com/post-inspector/</div>
+        
+        <h3>Open Graph Preview Tool</h3>
+        <div class="test-url">https://www.opengraph.xyz/</div>
+    </div>
+
+    <div class="test-section">
+        <h2>✅ Testing Checklist</h2>
+        <div class="checklist">
+            <h3>Manual Testing Steps:</h3>
+            <ul>
+                <li>✅ Generate social preview images (1200x630 PNG format)</li>
+                <li>✅ Add Open Graph meta tags to layout.tsx</li>
+                <li>✅ Add Twitter Card meta tags</li>
+                <li>✅ Set metadataBase to prevent Next.js warnings</li>
+                <li>✅ Create desktop and mobile screenshots for app manifest</li>
+                <li>⏳ Test with Facebook Sharing Debugger (when deployed)</li>
+                <li>⏳ Test with Twitter Card Validator (when deployed)</li>
+                <li>⏳ Test with LinkedIn Post Inspector (when deployed)</li>
+                <li>⏳ Verify images load correctly on social platforms</li>
+                <li>⏳ Test sharing on actual social media posts</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="test-section">
+        <h2>📝 Implementation Summary</h2>
+        <p><strong>Files Created/Modified:</strong></p>
+        <ul>
+            <li><code>src/app/layout.tsx</code> - Added Open Graph and Twitter meta tags</li>
+            <li><code>scripts/generate-social-preview.js</code> - Generate HTML templates</li>
+            <li><code>scripts/html-to-image.js</code> - Convert HTML to PNG images</li>
+            <li><code>scripts/capture-screenshots.js</code> - Capture website screenshots</li>
+            <li><code>public/images/social/og-image-main.png</code> - Main social preview</li>
+            <li><code>public/images/social/og-image-services.png</code> - Services preview</li>
+            <li><code>public/images/social/og-image-portfolio.png</code> - Portfolio preview</li>
+            <li><code>public/images/social/screenshot-desktop.png</code> - Desktop screenshot</li>
+            <li><code>public/images/social/screenshot-mobile.png</code> - Mobile screenshot</li>
+        </ul>
+        
+        <p><strong>Image Specifications:</strong></p>
+        <ul>
+            <li>Social Preview Images: 1200x630 pixels (Facebook/LinkedIn optimal)</li>
+            <li>Desktop Screenshot: 1280x720 pixels</li>
+            <li>Mobile Screenshot: 375x667 pixels (2x scale factor)</li>
+            <li>All images: PNG format with high resolution</li>
+        </ul>
+    </div>
+
+    <div class="test-section">
+        <h2>🚀 Next Steps</h2>
+        <p>Once the website is deployed to production:</p>
+        <ul>
+            <li>Test all social sharing URLs with the validation tools above</li>
+            <li>Share test posts on Facebook, Twitter, and LinkedIn</li>
+            <li>Verify that the correct images and text appear</li>
+            <li>Update the metadataBase URL if the production domain differs</li>
+            <li>Monitor Google Analytics for social media referral traffic</li>
+        </ul>
+    </div>
+</body>
+</html>

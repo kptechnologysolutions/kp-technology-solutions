@@ -1,0 +1,207 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      width: 1200px;
+      height: 630px;
+      background: linear-gradient(135deg, #7C3AED 0%, #3B82F6 50%, #06B6D4 100%);
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .background-pattern {
+      position: absolute;
+      inset: 0;
+      opacity: 0.1;
+    }
+    
+    .bg-circle-1 {
+      position: absolute;
+      top: 80px;
+      left: 80px;
+      width: 384px;
+      height: 384px;
+      background: white;
+      border-radius: 50%;
+      filter: blur(72px);
+    }
+    
+    .bg-circle-2 {
+      position: absolute;
+      bottom: 80px;
+      right: 80px;
+      width: 384px;
+      height: 384px;
+      background: white;
+      border-radius: 50%;
+      filter: blur(72px);
+    }
+    
+    .content-container {
+      position: relative;
+      z-index: 10;
+      max-width: 1024px;
+      margin: 0 auto;
+      padding: 0 64px;
+      text-align: center;
+    }
+    
+    .brand-container {
+      margin-bottom: 32px;
+    }
+    
+    .brand-logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+    
+    .logo-icon {
+      width: 64px;
+      height: 64px;
+      background: white;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .logo-text {
+      color: #7C3AED;
+      font-size: 24px;
+      font-weight: 700;
+    }
+    
+    .brand-text {
+      text-align: left;
+    }
+    
+    .brand-title {
+      color: white;
+      font-size: 24px;
+      font-weight: 700;
+    }
+    
+    .brand-subtitle {
+      color: #DBEAFE;
+      font-size: 18px;
+    }
+    
+    .main-title {
+      font-size: 60px;
+      font-weight: 700;
+      color: white;
+      margin-bottom: 24px;
+      line-height: 1.1;
+    }
+    
+    .main-description {
+      font-size: 20px;
+      color: #DBEAFE;
+      margin-bottom: 32px;
+      max-width: 768px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.6;
+    }
+    
+    .feature-highlights {
+      display: flex;
+      justify-content: center;
+      gap: 32px;
+      color: white;
+      margin-bottom: 32px;
+    }
+    
+    .feature-item {
+      text-align: center;
+    }
+    
+    .feature-number {
+      font-size: 30px;
+      font-weight: 700;
+    }
+    
+    .feature-label {
+      color: #DBEAFE;
+      font-size: 14px;
+    }
+    
+    .contact-info {
+      color: #DBEAFE;
+      font-size: 18px;
+    }
+    
+    .decorative-element {
+      position: absolute;
+      top: 32px;
+      right: 32px;
+      color: rgba(255, 255, 255, 0.2);
+    }
+  </style>
+</head>
+<body>
+  <div class="background-pattern">
+    <div class="bg-circle-1"></div>
+    <div class="bg-circle-2"></div>
+  </div>
+  
+  <div class="content-container">
+    <div class="brand-container">
+      <div class="brand-logo">
+        <div class="logo-icon">
+          <span class="logo-text">KP</span>
+        </div>
+        <div class="brand-text">
+          <div class="brand-title">KP Technology Solutions</div>
+          <div class="brand-subtitle">Web Development Cleveland</div>
+        </div>
+      </div>
+    </div>
+    
+    <h1 class="main-title">Cleveland Web Development Experts</h1>
+    
+    <p class="main-description">15+ years building custom websites, mobile apps, and online stores. Angular & Next.js specialists who speak your language.</p>
+    
+    <div class="feature-highlights">
+      <div class="feature-item">
+        <div class="feature-number">15+</div>
+        <div class="feature-label">Years Experience</div>
+      </div>
+      <div class="feature-item">
+        <div class="feature-number">500+</div>
+        <div class="feature-label">Happy Clients</div>
+      </div>
+      <div class="feature-item">
+        <div class="feature-number">50+</div>
+        <div class="feature-label">Projects Delivered</div>
+      </div>
+    </div>
+    
+    <div class="contact-info">
+      kptechnologysolutions@gmail.com
+    </div>
+  </div>
+  
+  <div class="decorative-element">
+    <svg width="100" height="100" viewBox="0 0 100 100" fill="currentColor">
+      <path d="M50 10 L70 30 L50 50 L30 30 Z M50 50 L70 70 L50 90 L30 70 Z" />
+    </svg>
+  </div>
+</body>
+</html>
+  
