@@ -67,7 +67,15 @@ export const metadata: Metadata = {
     },
   },
   verification: {
-    google: "your-google-verification-code",
+    google: "ARZc5pipZh9cAGGatDKb1helzhP1CL19VQJltfoNw5I",
+  },
+  icons: {
+    icon: [
+      { url: '/favicon.svg?v=2', type: 'image/svg+xml' },
+      { url: '/favicon.svg?v=2', sizes: '32x32', type: 'image/svg+xml' },
+    ],
+    apple: '/icon-192.png',
+    shortcut: '/favicon.svg?v=2',
   },
 };
 

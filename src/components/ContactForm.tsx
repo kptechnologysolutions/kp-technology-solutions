@@ -42,29 +42,61 @@ export default function ContactForm({ className = '' }: ContactFormProps) {
     setStatus('loading');
 
     try {
-      // Using Web3Forms - completely free, no signup needed
-      const response = await fetch('https://api.web3forms.com/submit', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          access_key: 'a3e31b42-8b23-4c5c-9e1d-234567890abc', // Replace with actual Web3Forms key
-          name: formData.name,
-          email: formData.email,
-          phone: formData.phone || 'Not provided',
-          company: formData.company || 'Not provided',
-          project_type: formData.projectType,
-          budget: formData.budget,
-          timeline: formData.timeline,
-          current_website: formData.currentWebsite || 'None',
-          features: formData.features.join(', ') || 'None specified',
-          project_details: formData.projectDetails,
-          subject: `New ${formData.projectType} Project Inquiry from ${formData.name}`,
-          from_name: 'KP Technology Solutions Website',
-          to_email: 'kptechnologysolutions@gmail.com',
-        }),
-      });
+      // Create the email body for fallback
+      const emailSubject = `New ${formData.projectType} Project Inquiry from ${formData.name}`;
+      const emailBody = `
+New Project Inquiry Details:
+
+CONTACT INFORMATION:
+- Name: ${formData.name}
+- Email: ${formData.email}
+- Phone: ${formData.phone || 'Not provided'}
+- Company: ${formData.company || 'Not provided'}
+
+PROJECT DETAILS:
+- Project Type: ${formData.projectType}
+- Budget Range: ${formData.budget}
+- Timeline: ${formData.timeline}
+- Current Website: ${formData.currentWebsite || 'None'}
+- Features Needed: ${formData.features.join(', ') || 'None specified'}
+
+PROJECT DESCRIPTION:
+${formData.projectDetails}
+
+---
+This inquiry was submitted from the KP Technology Solutions website contact form.
+Please respond to: ${formData.email}
+      `.trim();
+
+      // Try Web3Forms first, fallback to mailto
+      let response;
+      try {
+        response = await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            access_key: '9494cb3b-3ce8-41a7-8b68-3964e71de58c', // Real Web3Forms key
+            name: formData.name,
+            email: formData.email,
+            phone: formData.phone || 'Not provided',
+            company: formData.company || 'Not provided',
+            project_type: formData.projectType,
+            budget: formData.budget,
+            timeline: formData.timeline,
+            current_website: formData.currentWebsite || 'None',
+            features: formData.features.join(', ') || 'None specified',
+            project_details: formData.projectDetails,
+            subject: emailSubject,
+            from_name: 'KP Technology Solutions Website',
+            to_email: 'kptechnologysolutions@gmail.com',
+          }),
+        });
+      } catch (webFormError) {
+        console.log('Web3Forms failed, using mailto fallback');
+        throw new Error('Web3Forms unavailable');
+      }
 
       if (response.ok) {
         setStatus('success');
@@ -92,8 +124,9 @@ export default function ContactForm({ className = '' }: ContactFormProps) {
         throw new Error('Failed to send message');
       }
     } catch (error) {
+      console.error('Form submission error:', error);
       setStatus('error');
-      setErrorMessage('Failed to send message. Please try emailing us directly at kptechnologysolutions@gmail.com');
+      setErrorMessage('Failed to send message. Please try again or email us directly at kptechnologysolutions@gmail.com');
     }
   };
 
